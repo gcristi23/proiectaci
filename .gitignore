@@ -1,1 +1,10 @@
 venv
+data
+dataset
+__pycache__
+models
+input*
+npydata
+notconverted
+gt
+output*
