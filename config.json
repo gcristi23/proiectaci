@@ -4,7 +4,7 @@
     "output_path":"./data/output/text",
     "test_path":"./data/test",
     "test":true,
-    "model":"deep_voting",
+    "model":"autoencoder",
     "batch_no":1,
     "batch_size":1500,
     "n_epochs":50,

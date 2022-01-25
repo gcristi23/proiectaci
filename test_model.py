@@ -20,7 +20,7 @@ if __name__ == "__main__":
     input_image = torch.from_numpy(input).float()
 
     model = models[conf["model"]]()
-    model.load_state_dict(torch.load(conf["model"]))
+    model.load_state_dict(torch.load(conf["model"], map_location=torch.device('cpu')))
 
     device = get_device()
 
@@ -39,4 +39,10 @@ if __name__ == "__main__":
         plot(image, "Output", 2,3,1)
         for j in range(5):
             plot(input[i,j,:,:],"Input"+str(j),2,3,j+2)
+
+        plt.figure()
+        plt.imshow(image>0.3, cmap = "gray")
+        plt.show()
+        plt.figure()
+        plt.imshow(image, cmap = "gray")
         plt.show()
